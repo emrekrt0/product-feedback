@@ -282,8 +282,17 @@ input.comment-box {
 .noFB-text>h1 {
   margin-bottom: 16px;
 }
-
-
+.sortButton>select {
+  border: none;
+  background: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+#sortButtonID option {
+  color: #000;
+  padding: 10px 10px;
+}
 
 
 
@@ -443,7 +452,7 @@ input.comment-box {
 .ux-btn-sb:hover {
   background-color: #CFD7FF;
 }
-.header-middle-buttons a.active .ux-btn-sb {
+.header-middle-buttons .ux-btn-sb.active {
   background-color: #4661E6;
   color: #FFFFFF;
 }

@@ -1,7 +1,17 @@
-import React from "react"
+import React, {useState} from "react"
 import { NavLink } from "react-router-dom"
 
-export default function Header() {
+export default function Header( {activeButton, setActiveButton} ) {
+
+
+    function handleActiveStatus(e) {
+        const clickedButton = e.target.textContent;
+        setActiveButton(clickedButton);
+        localStorage.setItem('activeButton', clickedButton); 
+    }
+    
+    console.log(localStorage.getItem('activeButton'), 'local active button');
+
     return (
         <header>
         <div className="header-top">
@@ -11,14 +21,15 @@ export default function Header() {
             </div>
         </div>
         <div className="header-middle">
-            <div className="header-middle-buttons">
-                <NavLink to={'/'}><button className="ux-btn-sb"><p className="textP3-semibold">All</p></button></NavLink>
-                <NavLink to={'/ui'}><button className="ux-btn-sb"><p className="textP3-semibold">UI</p></button></NavLink>
-                <button className="ux-btn-sb"><p className="textP3-semibold">UX</p></button>
-                <button className="ux-btn-sb"><p className="textP3-semibold">Enhancement</p></button>
-                <button className="ux-btn-sb"><p className="textP3-semibold">Bug</p></button>
-                <button className="ux-btn-sb"><p className="textP3-semibold">Feature</p></button>
-            </div>
+        <div className="header-middle-buttons">
+            {['All', 'UI', 'UX', 'Enhancement', 'Bug', 'Feature'].map((buttonText) => (
+                <button  onClick={handleActiveStatus}
+                    key={buttonText} 
+                    className={`ux-btn-sb ${activeButton === buttonText ? 'active' : ''}`}>
+                    <p className="textP3-semibold">{buttonText}</p>
+                </button>
+            ))}
+        </div>
         </div>
         <div className="header-bottom">
             <div className="header-bottom-text">

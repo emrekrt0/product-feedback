@@ -69,11 +69,11 @@ export default function NewFeedback() {
                             </div>
                             <div className="newFB-form-content-comment fb-selection">
                                 <select name="category" id="category" required>
-                                    <option value="feature" name="feature" defaultValue>Feature</option>
+                                    <option value="Feature" name="Feature" defaultValue>Feature</option>
                                     <option value="UI" name="UI">UI</option>
                                     <option value="UX" name="UX">UX</option>
-                                    <option value="enhancement" name="enhancement">Enhancement</option>
-                                    <option value="bug" name="bug">Bug</option>
+                                    <option value="Enhancement" name="Enhancement">Enhancement</option>
+                                    <option value="Bug" name="Bug">Bug</option>
                                 </select>      
                                 <div className="dropDownArrow">
                                     <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
